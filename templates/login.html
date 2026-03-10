@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+    <title>登录 - 车牌识别系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <h1>车牌识别系统</h1>
+            <p>PLATE RECOGNITION SYSTEM</p>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">账户</label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" placeholder="请输入用户名/邮箱" required>
+                </div>
+                <div class="error-message" id="usernameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="请输入密码" required>
+                </div>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="options">
+                <label class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <span>记住我</span>
+                </label>
+                <a href="#" class="forgot-password" id="forgotPasswordLink">忘记密码?</a>
+            </div>
+            <div class="error-message" id="loginError"></div>
+            <button type="submit">
+                <span>登录</span>
+            </button>
+        </form>
+        <div class="register-link">
+            还没有账号? <a href="/register">立即注册</a>
+        </div>
+    </div>
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>找回密码</h2>
+            <div class="step active" id="step1">
+                <div class="form-group">
+                    <label for="resetEmail">邮箱地址</label>
+                    <input type="email" id="resetEmail" placeholder="请输入注册邮箱">
+                    <div class="error-message" id="resetEmailError"></div>
+                </div>
+                <button type="button" id="sendCodeBtn">
+                    <span>发送验证码</span>
+                </button>
+            </div>
+            <div class="step" id="step2">
+                <div class="form-group">
+                    <label for="verifyCode">验证码</label>
+                    <input type="text" id="verifyCode" placeholder="请输入验证码">
+                    <div class="error-message" id="verifyCodeError"></div>
+                </div>
+                <button type="button" id="verifyCodeBtn">
+                    <span>验证</span>
+                </button>
+                <button type="button" class="btn-secondary" id="backToStep1">
+                    <span>返回</span>
+                </button>
+            </div>
+            <div class="step" id="step3">
+                <div class="success-message" id="successMsg">验证成功!</div>
+                <div class="form-group">
+                    <label for="newPassword">新密码</label>
+                    <input type="password" id="newPassword" placeholder="请输入新密码">
+                    <div class="password-strength" id="newPasswordStrength" style="display: none;">
+                        <div class="strength-bar">
+                            <div class="strength-bar-fill" id="newStrengthBar"></div>
+                        </div>
+                        <span id="newStrengthText"></span>
+                    </div>
+                    <div class="error-message" id="newPasswordError"></div>
+                    <div class="info-text">密码可包含数字、字母或特殊字符,长度8-20位</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">确认新密码</label>
+                    <input type="password" id="confirmNewPassword" placeholder="请再次输入新密码">
+                    <div class="error-message" id="confirmNewPasswordError"></div>
+                    <div class="success-message1" id="confirmNewPwdSuccess">✓ 两次密码一致</div>
+                </div>
+                <button type="button" id="resetPasswordBtn">
+                    <span>重置密码</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='js/login.js') }}"></script>
+</body>
+</html>

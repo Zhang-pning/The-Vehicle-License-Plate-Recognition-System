@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+    <title>首页 - 车牌识别系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="overlay">
+        <h1>The VEHICLE LICENSE</h1>
+        <p>Recognition System</p>
+        <a href="/login" class="login-btn">
+            <span>Enter System</span>
+        </a>
+    </div>
+    <div class="mobile-hint">Touch and drag to interact with particles</div>
+    <canvas id="canvas1"></canvas>
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+</body>
+</html>

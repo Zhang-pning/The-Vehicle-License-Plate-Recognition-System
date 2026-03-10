@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>管理后台 - 车牌识别系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/managerment.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-left">
+                <span class="welcome">欢迎您，{{ username }}！</span>
+            </div>
+            <div class="navbar-right">
+                <button class="nav-btn" id="logoutBtn">登出</button>
+            </div>
+        </div>
+        <div class="header">
+            <h1>用户管理</h1>
+            <p>USER MANAGEMENT</p>
+        </div>
+        <div class="action-bar">
+            <div class="search-fields">
+                <div class="search-item">
+                    <label for="searchUsername">用户名</label>
+                    <input type="text" id="searchUsername" placeholder="输入用户名">
+                </div>
+                <div class="search-item">
+                    <label for="searchEmail">邮箱</label>
+                    <input type="text" id="searchEmail" placeholder="输入邮箱">
+                </div>
+                <div class="search-item">
+                    <label for="searchState">状态</label>
+                    <select id="searchState">
+                        <option value="">全部</option>
+                        <option value="1">活跃</option>
+                        <option value="0">禁用</option>
+                    </select>
+                </div>
+                <button class="search-btn" id="searchBtn">
+                    <span>查询</span>
+                </button>
+                <button class="reset-btn" id="resetBtn">
+                    <span>重置</span>
+                </button>
+            </div>
+            <button class="add-btn" id="addUserBtn">
+                <span>+ 新增用户</span>
+            </button>
+        </div>
+        <div class="table-wrapper">
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>用户名</th>
+                        <th>邮箱</th>
+                        <th>用户类型</th>
+                        <th>登录次数</th>
+                        <th>状态</th>
+                        <th>创建时间</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <tr>
+                        <td colspan="9" class="loading">加载中...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination" id="pagination">
+            <button class="page-btn" id="prevPage" disabled>上一页</button>
+            <span class="page-info" id="pageInfo">第 1 页 / 共 1 页</span>
+            <button class="page-btn" id="nextPage" disabled>下一页</button>
+        </div>
+    </div>
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>新增用户</h2>
+            <form id="addUserForm">
+                <div class="form-group">
+                    <label for="addUsername">用户名 <span>*</span></label>
+                    <input type="text" id="addUsername" placeholder="数字和字母组合" required>
+                    <div class="error-message" id="addUsernameError"></div>
+                    <div class="info-text">用户名只能包含数字和字母，区分大小写</div>
+                </div>
+                <div class="form-group">
+                    <label for="addPassword">密码 <span>*</span></label>
+                    <input type="password" id="addPassword" placeholder="请输入密码" required>
+                    <div class="error-message" id="addPasswordError"></div>
+                    <div class="info-text">密码可包含数字、字母或特殊字符，长度8-20位</div>
+                </div>
+                <div class="form-group">
+                    <label for="addConfirmPassword">确认密码 <span>*</span></label>
+                    <input type="password" id="addConfirmPassword" placeholder="请再次输入密码" required>
+                    <div class="error-message" id="addConfirmPasswordError"></div>
+                    <div class="success-message" id="addConfirmPasswordSuccess">✓ 两次密码一致</div>
+                </div>
+                <div class="form-group">
+                    <label for="addEmail">邮箱 <span>*</span></label>
+                    <input type="email" id="addEmail" placeholder="example@email.com" required>
+                    <div class="error-message" id="addEmailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="addUserType">用户类型 <span>*</span></label>
+                    <select id="addUserType" required>
+                        <option value="normal">普通用户</option>
+                        <option value="admin">管理员</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="addState">状态 <span>*</span></label>
+                    <select id="addState" required>
+                        <option value="1">活跃</option>
+                        <option value="0">禁用</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitAddUser">
+                    <span>添加用户</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/managerment.js') }}"></script>
+</body>
+</html>

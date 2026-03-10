@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>主面板 - 车牌识别</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/parking.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-left">
+                <span class="welcome">欢迎您，{{ username }}！</span>
+            </div>
+            <div class="navbar-right">
+                <button class="nav-btn" id="aboutBtn">关于</button>
+                <button class="nav-btn" id="logoutBtn">登出</button>
+            </div>
+        </div>
+        <div class="header">
+            <h1>车牌识别</h1>
+            <p>UPLOAD & RECOGNIZE</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-content" id="uploadContent">
+                <div class="upload-icon">📁</div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <div class="upload-text">点击或拖拽图片至此</div>
+                <div class="upload-hint">支持 JPG、PNG、BMP 格式</div>
+            </div>
+            <img class="upload-preview" id="uploadPreview" style="display: none;" alt="预览">
+        </div>
+        <div class="examples-section">
+            <div class="section-title">选择示例图片</div>
+            <div class="example-grid" id="exampleGrid">
+                <div class="loading-examples">加载示例图片中...</div>
+            </div>
+        </div>
+        <div class="action-bar">
+            <div class="update-tip" id="updateTip">已更新图片，可以进行识别</div>
+            <button class="recognize-btn" id="recognizeBtn" disabled>开始识别</button>
+        </div>
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="result-image">
+                <img id="resultImg" src="" alt="识别结果">
+            </div>
+            <div class="result-details">
+                <h3>识别结果</h3>
+                <div id="plateList"></div>
+            </div>
+        </div>
+        <div id="aboutModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeAbout">&times;</span>
+                <h2>关于本网站</h2>
+                <div class="about-content">
+                    <p>车牌识别系统（License Plate Recognition System）</p>
+                    <p>版本：1.0.0</p>
+                    <p>简介：本系统基于YOLOv5进行车牌检测，使用LPRNet进行车牌字符识别，支持蓝、绿、黄三种车牌颜色。</p>
+                    <p>功能：</p>
+                    <ul>
+                        <li>上传图片进行车牌识别</li>
+                        <li>提供示例图片快速体验</li>
+                        <li>显示车牌颜色和号码</li>
+                    </ul>
+                    <p>开发团队：Zhang-pning</p>
+                    <p>联系方式：thnneww184@gmail.com</p>
+                    <p>© 2026 车牌识别系统</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/parking.js') }}"></script>
+</body>
+</html>
