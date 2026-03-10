@@ -139,13 +139,13 @@ LPRNet模型：将YOLOv5剪切下来的车牌作为输入，输出车牌号
 （略）
 
 ## 贡献者
-![贡献者](https://contrib.rocks/image?repo=Zhang-pning/The-Vehicle-License-Plate-Recognition-System)
 
 <p align="left">
     <a href="https://github.com/Zhang-pning/The-Vehicle-License-Plate-Recognition-System/graphs/contributors">
-        <img width="220" src="https://contrib.rocks/image?repo=Zhang-pning/The-Vehicle-License-Plate-Recognition-System&max=300&columns=16" />
+        <img width="220" src="https://contrib.rocks/image?repo=Zhang-pning/The-Vehicle-License-Plate-Recognition-System&max=20&columns=5" />
     </a>
 </p>
+
 
 
 
