@@ -1,6 +1,6 @@
 # 车牌识别系统
 项目预览网址：www.zpning.top
-
+（暂定维护到2026.10.29 0:0:0）
 #### 项目预览图
 首页：
 ![index.html](images_demo/index.png)
@@ -138,8 +138,15 @@ LPRNet模型：将YOLOv5剪切下来的车牌作为输入，输出车牌号
 
 （略）
 
+## 联系我们
+thnneww184@gmail.com
+
+480307604@qq.com
+
+
 ## 贡献者
 <p align="left">
     <a href="https://github.com/Zhang-pning"><img src="https://github.com/Zhang-pning.png" width="60px" alt="Zhang-pning" /></a>
     <a href="https://github.com/imogen11-1"><img src="https://github.com/imogen11-1.png" width="60px" alt="imogen11-1" /></a>
 </p>
+
