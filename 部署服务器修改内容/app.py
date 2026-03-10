@@ -27,7 +27,7 @@ app.config.from_object(Config)
 DB_CONFIG = {
     'host': app.config.get('MYSQL_HOST', 'localhost'),
     'user': app.config.get('MYSQL_USER', 'Jack'),
-    'password': app.config.get('MYSQL_PASSWORD', 'Zhangkun*0914'),
+    'password': app.config.get('MYSQL_PASSWORD', '######'),
     'database': app.config.get('MYSQL_DB', 'user_management'),
     'charset': app.config.get('MYSQL_CHARSET', 'utf8mb4'),
     'cursorclass': DictCursor  # 关键：返回字典格式，和 flask-mysqldb 一致
