@@ -96,10 +96,11 @@ LPRNet模型：将YOLOv5剪切下来的车牌作为输入，输出车牌号
 
 先运行mysql.sql中的sql代码
 
-再修改config.py中的数据库连接配置
+再修改config.py中的数据库连接等配置信息
 
 最后运行app.py
 
 ### 1.3.2 部署到服务器
 
 略
+
