@@ -1,6 +1,20 @@
 # 车牌识别系统
 项目预览网址：www.zpning.top
 
+#### 项目预览图
+首页：
+![index.html](images_demo/index.png)
+登录页：
+![login.html](images_demo/login.png)
+注册页：
+![register.html](images_demo/register.png)
+主面板：
+![parking.html](images_demo/parking1.png)
+![parking.html](images_demo/parking2.png)
+![parking.html](images_demo/parking3.png)
+管理页：
+![mnagerment.html](images_demo/managerment.png)
+
 ## 1.1 技术框架介绍
 ### 1.1.1 Flask框架
 Flask是一个轻量级、灵活的Python Web框架，被称为微架构（Microframework）——
@@ -86,11 +100,15 @@ LPRNet模型：将YOLOv5剪切下来的车牌作为输入，输出车牌号
 ### 1.3.1 本地Windows调试
 （1）环境配置说明：
 
-在conda环境下：
+以anaconda为例：
 
-先conda create -n yolov5 python=3.9.24
+先创建conda环境，python版本为3.9.24（不一定非要这个版本）
+      
+    conda create -n yolov5 python=3.9.24
 
-再pip install -r requirements.txt -i 清华镜像
+再按照依赖
+    
+    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 即可完成环境配置
 
@@ -104,9 +122,21 @@ LPRNet模型：将YOLOv5剪切下来的车牌作为输入，输出车牌号
 
 ### 1.3.2 部署到服务器
 
-略
+（1）租服务器、买域名
+
+这里以阿里云为例：
+
+阿里云服务器对于新人的话第一年是几十RMB，所以还是很划算的。
+
+可以参考我的轻量级服务器配置信息：CPU2核、内存2G、系统盘40GB
+
+镜像信息：选择应用镜像中的宝塔Linux面板9.2.0
+
+域名的话，买完需要进行域名备案（这里不再详细赘述）
+
+（2）部署网站到服务器
+
+（略）
 
 ## 贡献者
 ![贡献者](https://contrib.rocks/image?repo=Zhang-pning/The-Vehicle-License-Plate-Recognition-System)
-
-
