@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) UNIQUE NOT NULL COMMENT '邮箱（唯一）',
     user_type ENUM('normal', 'admin') DEFAULT 'normal' NOT NULL COMMENT '用户类型：normal-普通用户, admin-管理员',
     login_count INT DEFAULT 0 COMMENT '用户登录次数',
-    state ENUM('0','1') DEFAULT 1 NOT NULL COMMENT '用户状态：0-被禁用，1-活跃',
+    state ENUM('0','1') DEFAULT '1' NOT NULL COMMENT '用户状态：0-被禁用，1-活跃',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     INDEX idx_username (username),
@@ -45,4 +45,5 @@ SELECT
     ELT(1 + FLOOR(RAND() * 2), '0', '1') AS state,                  -- 状态：0（禁用）或 1（活跃）
     NOW() - INTERVAL FLOOR(RAND() * 365) DAY AS created_at,         -- 创建时间：最近365天内随机
     NOW() - INTERVAL FLOOR(RAND() * 30) DAY AS updated_at           -- 更新时间：最近30天内随机
+
 FROM numbers;
