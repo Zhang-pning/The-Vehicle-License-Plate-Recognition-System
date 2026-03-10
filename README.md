@@ -1,4 +1,6 @@
 # 车牌识别系统
+项目预览网址：www.zpning.top
+
 ## 1.1 技术框架介绍
 ### 1.1.1 Flask框架
 Flask是一个轻量级、灵活的Python Web框架，被称为微架构（Microframework）——
@@ -103,4 +105,5 @@ LPRNet模型：将YOLOv5剪切下来的车牌作为输入，输出车牌号
 ### 1.3.2 部署到服务器
 
 略
+
 
