@@ -31,7 +31,7 @@ PASSWORD_REGEX = re.compile(r'^[a-zA-Z0-9!@#$%^&*()_\-+=\[\]{}|\\;:\'",.<>/?]+$'
 EMAIL_REGEX = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 
 # 管理员密钥（应该从环境变量或配置文件读取）
-ADMIN_KEY = "Zhangkun*0914"  # 请修改为你的管理员密钥
+ADMIN_KEY = "123456"  # 请修改为你的管理员密钥
 
 
 def login_required(required_type=None):
@@ -818,3 +818,4 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
