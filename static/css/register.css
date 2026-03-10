@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #050505;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    color: #fff;
+}
+.container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 242, 96, 0.15);
+    border-radius: 20px;
+    padding: 50px 40px;
+    width: 550px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.logo-section h1 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00f260, #0575e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+.logo-section p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 3px;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+.form-group label span {
+    color: #ff6666;
+}
+.input-wrapper {
+    position: relative;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 242, 96, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300f260' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+.form-group select option {
+    background: #1a1a1a;
+    color: #fff;
+}
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #00f260;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 12px rgba(0, 242, 96, 0.3);
+}
+.form-group input::placeholder {
+    color: #444;
+}
+.error-message {
+    color: #ff6666;
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+}
+.error-message.show {
+    display: block;
+}
+.success-message {
+    color: #00f260;
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+}
+.success-message.show {
+    display: block;
+}
+.verification-wrapper {
+    display: flex;
+    gap: 10px;
+}
+.verification-wrapper input {
+    flex: 1;
+}
+.send-code-btn {
+    padding: 14px 25px;
+    background: transparent;
+    border: 1px solid rgba(0, 242, 96, 0.5);
+    border-radius: 10px;
+    color: #00f260;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+.send-code-btn:hover {
+    background: rgba(0, 242, 96, 0.1);
+    border-color: #00f260;
+    color: #fff;
+}
+.send-code-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.3);
+}
+.admin-key-group {
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+.admin-key-group.show {
+    display: block;
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+button[type="submit"] {
+    outline: none;
+    cursor: pointer;
+    border: 2px solid rgba(0, 242, 96, 0.7);
+    padding: 14px 42px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: transparent;
+    color: white;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+button[type="submit"] span {
+    position: relative;
+    z-index: 1;
+}
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 96, 0.4), transparent);
+    transition: all 0.6s ease;
+    z-index: 0;
+}
+button[type="submit"]:hover {
+    color: #050505;
+    background: linear-gradient(90deg, #00f260, #0575e6);
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(0, 242, 96, 0.8),
+                0 0 40px rgba(5, 117, 230, 0.6);
+    transform: translateY(-2px);
+}
+button[type="submit"]:hover::before {
+    left: 100%;
+}
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0, 242, 96, 0.8);
+}
+.login-link {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.login-link a {
+    color: #00f260;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+.login-link a:hover {
+    color: #0575e6;
+}
+.password-strength {
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.strength-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.strength-bar-fill {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+.strength-weak {
+    width: 33%;
+    background: #ff6666;
+}
+.strength-medium {
+    width: 66%;
+    background: #ffaa66;
+}
+.strength-strong {
+    width: 100%;
+    background: #00f260;
+}
+.info-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+    width: auto;
+    accent-color: #00f260;
+}
+.checkbox-group label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    line-height: 1.5;
+}
+.checkbox-group label a {
+    color: #00f260;
+    text-decoration: none;
+}
+.checkbox-group label a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .verification-wrapper {
+        flex-direction: column;
+    }
+    .send-code-btn {
+        width: 100%;
+    }
+}
